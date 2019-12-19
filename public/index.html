@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="stylesheet" href="<%= BASE_URL %>css/common.css">
+  <link rel="stylesheet" href="<%= BASE_URL %>css/iconfont/iconfont.css">
+  <link rel="stylesheet" href="<%= BASE_URL %>libs/swiper-4.1.0.min.css">
+  <script src="<%= BASE_URL %>libs/swiper-4.1.0.min.js"></script>
+  <title>miaomiao</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but miaomiao doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <style>
+    #app {
+      display: flex;
+      height: 100%;
+    }
+
+    #app div {
+      margin: auto;
+    }
+  </style>
+  <div id="app">
+    <div>影片正在 努力加载中...
+
+
+
+    </div>
+  </div>
+  <!-- built files will be auto injected -->
+
+  <script>
+    (function () {
+      function resize() {
+        // if(!window.hzapp_data_isPhone){
+        //   return resize_pc();
+        // }
+        //在750px宽度 1rem=40px;
+        var baseFontSize = 100;
+        var baseWidth = 750;
+        var maxWidth = 750;
+
+
+        var clientWidth = window.document.documentElement.clientWidth || window.innerWidth;
+        // var innerWidth = Math.max(Math.min(clientWidth, 480), 320);
+        clientWidth = clientWidth || 750;
+        if (!window.hzapp_data_isPhone && clientWidth > maxWidth) {
+          clientWidth = maxWidth;
+        }
+        var rem = (clientWidth / baseWidth) * baseFontSize;
+        window.__baseRem = rem;
+
+
+
+        window.document.documentElement.style.fontSize = rem + 'px';
+      }
+      function resize_pc() {
+
+        window.document.documentElement.style.fontSize = 20 + 'px';
+      }
+      resize();
+      window.onresize = resize;
+    }());
+  </script>
+
+</body>
+
+</html>

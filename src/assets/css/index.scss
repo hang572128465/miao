@@ -1,0 +1,701 @@
+@import "./layout.scss";
+
+body {
+  font-size: initial;
+}
+.movie-detail {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.download-app-bar {
+  height: 1.28rem;
+  align-items: center;
+  background-color: #fff;
+  img.logo {
+    margin-left: 0.3rem;
+  }
+  .app-name-desc {
+    margin-left: 0.2rem;
+  }
+  .app-desc {
+    font-size: 0.24rem;
+    color: #999;
+  }
+  .app-name {
+    font-size: 0.34rem;
+    color: #222;
+    line-height: 0.46rem;
+  }
+}
+.download-app-bar .btn-open-app {
+  margin-left: 1rem;
+  width: 1.36rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  background: #ef4238;
+  border-radius: 0.06rem;
+  font-size: 0.26rem;
+  color: #fff;
+}
+
+.movie-info {
+  padding: 0.42rem 0.32rem;
+  color: #fff;
+  background-color: rgb(62, 73, 102);
+
+  // 详情头部
+  .movie-info-top {
+    .movie-cover {
+      height: 2.76rem;
+      width: 2rem;
+      position: relative;
+
+      // 左下角图片
+      img.poster-play {
+        height: 0.6rem;
+        width: 0.6rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    .movie-desc {
+      margin-left: 0.2rem;
+      flex-grow: 1;
+      margin-left: 0.24rem;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      overflow: hidden;
+
+      .movie-desc-top {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+      }
+
+      .movie-cn-name {
+        font-size: 0.4rem;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: 700;
+      }
+
+      .movie-en-name {
+        font-size: 0.24rem;
+        opacity: 0.6;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .movie-other-info {
+        display: flex;
+        flex-grow: 1;
+        flex-flow: column;
+        justify-content: center;
+      }
+      //类型
+      .movie-type {
+        font-size: 0.24rem;
+        display: flex;
+        align-items: center;
+        .movie-cat {
+          opacity: 0.6;
+        }
+        .movie-tag {
+          border-radius: 0.04rem;
+          margin-left: 0.08rem;
+          vertical-align: text-bottom;
+          display: flex;
+          align-items: center;
+          img {
+            height: 0.28rem;
+          }
+        }
+      }
+
+      .actors {
+        opacity: 0.6;
+        font-size: 0.24rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0;
+      }
+
+      //时间
+      .movie-show-time {
+        span {
+          opacity: 0.6;
+          font-size: 0.24rem;
+        }
+        img {
+          width: 0.1rem;
+          height: 0.18rem;
+        }
+      }
+
+      .btns {
+        display: flex;
+        justify-content: space-between;
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: hsla(0, 0%, 100%, 0.35);
+          box-shadow: 0 0.02rem 0.08rem 0 rgba(0, 0, 0, 0.1);
+          border-radius: 0.08rem;
+          font-size: 0.28rem;
+          width: 47.61904762%;
+          height: 0.6rem;
+          color: #fff;
+          img {
+            width: 0.28rem;
+            height: 0.28rem;
+            margin-right: 0.12rem;
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+  //页面下按钮默认
+  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+  }
+}
+//全局图片样式
+.img.noneBg {
+  background: none;
+}
+.img {
+  border: 0;
+  display: inline-block;
+  background: #f5f5f5
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAAEGkgCiAAAAGXRFW…yfOv/JmZQYchQTcch2XTuAx4IoGlRqlTgFOA3CBANUFk73AXANIMtuS9E+AAAAAElFTkSuQmCC)
+    no-repeat 50%;
+  background-size: 50%;
+}
+
+// 电影评价
+.real-time-word-of-mouth {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.06rem 0 hsla(0, 0%, 100%, 0.03);
+  border-radius: 0.12rem;
+  margin-top: 0.3rem;
+  padding: 0.2rem 0.24rem;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      font-size: 0.24rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      font-size: 0.2rem;
+      .num {
+        font-size: 0.22rem;
+        margin-right: 0.04rem;
+      }
+      .watched {
+        margin-left: 0.2rem;
+      }
+      span {
+        opacity: 0.6;
+      }
+    }
+    img {
+      width: 0.28rem;
+      height: 0.28rem;
+      margin-right: 0.08rem;
+    }
+  }
+  //评价中间内容
+  .middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 0;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0.4rem;
+      .score {
+        font-size: 0.68rem;
+        color: #ffb400;
+        line-height: 0.8rem;
+      }
+      .people-grade {
+        opacity: 0.4;
+        font-size: 0.2rem;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.21rem;
+    .left {
+      font-size: 0.24rem;
+      color: #ffe4a2;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}
+//星级
+.stars-percent-bar {
+  .stars {
+    justify-content: flex-end;
+    width: 0.7rem;
+    img {
+      height: 0.1rem;
+      width: 0.1rem;
+      margin-left: 0.02rem;
+      opacity: 0.4;
+    }
+  }
+  .bar {
+    width: 2rem;
+    height: 0.1rem;
+    background-color: hsla(0, 0%, 100%, 0.05);
+    border-radius: 0.02rem;
+    margin-left: 0.12rem;
+    margin-right: 0.1rem;
+    .percent {
+      height: 100%;
+      width: 58%;
+      background-color: #ffb400;
+      border-radius: 0.02rem;
+    }
+  }
+  .percent-value {
+    opacity: 0.4;
+    font-size: 0.14rem;
+  }
+}
+.stars-percent-bar,
+.stars-percent-bar .stars {
+  display: flex;
+  align-items: center;
+}
+.separator-line {
+  position: relative;
+  border-bottom: none;
+}
+.separator-line:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #e8e8e8;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+}
+.separator-line:after {
+  background-color: hsla(0, 0%, 100%, 0.1) !important;
+}
+
+// activity-bar 0元看电影，速抢 👉
+.activity-bar {
+  margin: 0.5rem 0 0.26rem;
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .left {
+    font-size: 0.3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    img {
+      width: 0.32rem;
+      height: 0.32rem;
+      margin-right: 0.16rem;
+      vertical-align: text-top;
+    }
+    span {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .right {
+    font-size: 0.24rem;
+    flex-shrink: 0;
+    span {
+      opacity: 0.6;
+    }
+    img {
+      width: 0.1rem;
+      height: 0.18rem;
+      margin-left: 0.12rem;
+    }
+  }
+}
+
+// 简介
+.brief-introduction {
+  // 关闭状态
+  &.close {
+    .title img {
+      transform: rotate(0deg);
+    }
+    .content p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      word-break: break-all;
+      overflow: hidden;
+    }
+  }
+
+  position: relative;
+  padding: 0.32rem 0 0;
+  //标题
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-size: 0.3rem;
+    }
+    button {
+      font-size: 0.24rem;
+      opacity: 0.6;
+      color: #fff;
+      width: 0.9rem;
+    }
+    img {
+      transform: rotate(-90deg);
+      width: 0.1rem;
+      height: 0.16rem;
+      margin-left: 0.12rem;
+    }
+  }
+  // 简介内容
+  .content {
+    font-size: 0.3rem;
+    line-height: 0.52rem;
+    overflow: hidden;
+    p {
+      margin: 0.14rem 0;
+      text-align: justify;
+    }
+  }
+}
+// 演员
+.actors {
+  margin: 0.36rem 0 0.3rem;
+  .title {
+    font-size: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .go-to-all-actors {
+      opacity: 0.6;
+      font-size: 0.24rem;
+      img {
+        width: 0.1rem;
+        height: 0.16rem;
+        margin-left: 0.12rem;
+      }
+    }
+  }
+  .actor-list {
+    margin-top: 0.22rem;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      overflow-x: scroll;
+      li {
+        flex-shrink: 0;
+        a {
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          width: 1.64rem;
+          img {
+            width: 1.6rem;
+            height: 2.24rem;
+            display: block;
+            background: none;
+          }
+          .name,
+          .role {
+            font-size: 0.24rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+          }
+          .role {
+            opacity: 0.4;
+          }
+        }
+      }
+    }
+  }
+  .left-margin {
+    margin-left: 0.12rem;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+// 视频剧照
+.videos-photos {
+  .title {
+    font-size: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .go-to-all {
+      opacity: 0.6;
+      font-size: 0.24rem;
+      img {
+        width: 0.1rem;
+        height: 0.16rem;
+        margin-left: 0.12rem;
+      }
+    }
+  }
+
+  .videos-photos-list {
+    margin-top: 0.22rem;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      overflow-x: scroll;
+      list-style: none;
+      li {
+        flex-shrink: 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .left-margin {
+      margin-left: 0.16rem;
+    }
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+// 评论
+.discussion {
+  background-color: #fff;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  overflow: hidden;
+  margin-top: -0.24rem;
+  position: relative;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.26rem 0.32rem 0.28rem;
+    .title {
+      font-size: 0.3rem;
+      color: #333;
+    }
+  }
+  .comments {
+    article {
+      padding: 0.3rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      & > .right {
+        margin-left: 0.22rem;
+        flex-grow: 1;
+        .top {
+          display: flex;
+          justify-content: space-between;
+          .name-box {
+            display: flex;
+            align-items: center;
+            .name {
+              font-size: 0.24rem;
+              color: #333;
+            }
+            .level-icon {
+              width: 0.62rem;
+              height: 0.3rem;
+              margin-left: 0.12rem;
+            }
+          }
+          .grade-score {
+            font-size: 0.22rem;
+            color: #999;
+          }
+        }
+        // 评价内容
+        .middle {
+          margin-top: 0.1rem;
+          .comment-content {
+            font-size: 0.3rem;
+            color: #333;
+            line-height: 0.42rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+          }
+        }
+        .bottom {
+          margin-top: 0.2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.24rem;
+          color: #666;
+          & > .right {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .praise-num {
+              margin-left: 0.1rem;
+            }
+            .goto-comments {
+              margin-left: 0.2rem;
+              width: 1.1rem;
+              height: 0.56rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-image: url(./../comment-bg.png);
+              background-size: contain;
+              .comment-icon {
+                margin-right: 0.08rem;
+                height: 0.24rem;
+                width: 0.24rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    article.no-padding-top {
+      padding-top: 0;
+    }
+    .separator-line {
+      margin-left: 1.2rem;
+    }
+    .separator-line:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #e8e8e8;
+      width: 100%;
+      height: 1px;
+      transform: scaleY(0.5);
+      transform-origin: 0 0;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  footer {
+    height: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .goto-all-comments {
+      font-size: 0.3rem;
+      color: #f03d37;
+    }
+  }
+}
+
+// 购买
+.buy-ticket-btn {
+  background-color: #fff;
+  height: 1.2rem;
+  width: 100%;
+  border-top-left-radius: 0.1rem;
+  border-top-right-radius: 0.1rem;
+  overflow: hidden;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 10;
+  .buy-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      margin-left: 0.48rem;
+      margin-right: 0.6rem;
+      width: 0.38rem;
+      height: 0.38rem;
+    }
+    a.goto-ticket {
+      flex: 1;
+      height: 0.88rem;
+      background-image: linear-gradient(-90deg, #fb3333, #ff5269);
+      box-shadow: 0 0.06rem 0.12rem 0 rgba(251, 51, 51, 0.3);
+      border-radius: 0.5rem;
+      font-size: 0.34rem;
+      color: #fff;
+      text-align: center;
+      line-height: 0.88rem;
+      margin: 0 0.2rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
